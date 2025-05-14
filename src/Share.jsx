@@ -36,7 +36,7 @@ export function SharePage() {
 
   async function handleSave() {
     try {
-      await axios.post(`http://100.20.92.101:5000/senddata/${id}`, {
+      await axios.post(`http://100.20.92.101/senddata/${id}`, {
         data: code,
       });
     } catch (err) {
@@ -47,7 +47,7 @@ export function SharePage() {
 
   async function getData() {
     try {
-      const resp = await axios.get(`http://100.20.92.101:5000/getdata/${id}`);
+      const resp = await axios.get(`http://100.20.92.101/getdata/${id}`);
       const currData = resp.data.text;
       if (currData !== receivedData) {
         setReceivedData(currData);
